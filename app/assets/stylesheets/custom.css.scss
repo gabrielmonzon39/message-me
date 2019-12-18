@@ -28,3 +28,14 @@ body{
 .ui.cards>.card>.extra a:not(.ui) {
   color: white;
 }
+
+#message-container{
+  height: 15em;
+  overflow: auto;
+}
+
+.input {
+  button{
+    display: none;
+  }
+}

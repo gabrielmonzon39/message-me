@@ -7,16 +7,16 @@
   <div class="twelve wide column">
     
     <div class="ui fluid card">
-        <div class="content">
+        <div class="content" id="message-container">
             <div class="header megawhite">Chatroom Messages: </div>
                 <%= render @messages %>
             </div>
         <div class="extra content">  
-            <%= form_for(@message, :html => {class: "ui fluid left icon input", role: "form"}, url:message_path) do |a| %>
+            <%= form_for(@message, :html => {class: "ui fluid left icon input", role: "form"}, url:message_path, remote: true) do |a| %>
 
                 <%= a.text_field :body, placeholder:"Say something..." %>
-                <%= a.button '<i class="terminal icon"></i>'.html_safe %>
-
+                <%= a.button %>
+                <i class="terminal icon"></i>
             <% end %>    
         </div>
     </div>
