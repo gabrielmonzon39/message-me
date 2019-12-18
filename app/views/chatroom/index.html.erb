@@ -9,15 +9,15 @@
     <div class="ui fluid card">
         <div class="content">
             <div class="header megawhite">Chatroom Messages: </div>
-            <div class="description">
-                Molly is a personal assistant living in Paris.
+                <%= render @messages %>
             </div>
-        </div>
-        <div class="extra content">
-            <div class="ui fluid left icon input">
-                <input type="text" placeholder="Say something...">
-                <i class="terminal icon"></i>
-            </div>
+        <div class="extra content">  
+            <%= form_for(@message, :html => {class: "ui fluid left icon input", role: "form"}, url:message_path) do |a| %>
+
+                <%= a.text_field :body, placeholder:"Say something..." %>
+                <%= a.button '<i class="terminal icon"></i>'.html_safe %>
+
+            <% end %>    
         </div>
     </div>
 
